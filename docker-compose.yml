@@ -11,5 +11,6 @@ services:
       - JWT_SECRET=secret
     volumes:
       - ./nginx/:/etc/nginx/:ro
+      - ./music/:/music
     ports:
       - "80:80"
