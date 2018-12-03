@@ -13,4 +13,3 @@ services:
       - ./nginx/:/etc/nginx/:ro
     ports:
       - "80:80"
-      - "443:443"
