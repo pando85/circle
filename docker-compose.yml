@@ -1,0 +1,16 @@
+version: '2'
+
+#volumes:
+
+services:
+  api-gateway:
+    container_name: api-gateway
+    image: pando85/openresty-nginx-jwt
+    restart: unless-stopped
+    environment:
+      - JWT_SECRET=secret
+    volumes:
+      - ./nginx/:/etc/nginx/:ro
+    ports:
+      - "80:80"
+      - "443:443"
