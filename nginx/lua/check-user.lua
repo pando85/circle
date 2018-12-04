@@ -1,5 +1,9 @@
 local auth = require "/etc/nginx/lua/auth"
 
+-- validate any specific claims you need here
+-- https://github.com/SkyLothar/lua-resty-jwt#jwt-validators
+local validators = require "resty.jwt-validators"
+
 local claim_spec = {
     -- validators.set_system_leeway(15), -- time in seconds
     -- exp = validators.is_not_expired(),
