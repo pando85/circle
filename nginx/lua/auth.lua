@@ -7,7 +7,7 @@ function _M.check(claim_spec)
     local auth_header = ngx.var.http_Authorization
     if auth_header then
         -- The character `%´ works as an escape or special character
-        _, _, token = string.find(auth_header, "circle%-token%s+(.+)")
+        _, _, token = string.find(auth_header, "Bearer%s+(.+)")
     end
 
     if token == nil then
